@@ -1,0 +1,27 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jetbrains.kotlin:kotlin-runtime:1.2.71'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.3.0'
+
+    // Sketch module
+    implementation project(path: ':sketch', transitive: false)
+
+    // Processing
+    implementation 'org.processing:core:3.3.7'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

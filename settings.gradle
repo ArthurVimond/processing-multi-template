@@ -1,1 +1,1 @@
-include ':mobile', ':sketch', ':wear'
+include ':mobile', ':sketch', ':wear', ':desktop'
