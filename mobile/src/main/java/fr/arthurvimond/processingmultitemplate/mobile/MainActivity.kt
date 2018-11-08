@@ -12,7 +12,7 @@ import processing.core.PApplet
 
 class MainActivity : AppCompatActivity() {
 
-    private val sketch: PApplet = Sketch()
+    private val sketch = Sketch()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +25,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        sketch.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        val pApplet = sketch as PApplet
+        pApplet.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     public override fun onNewIntent(intent: Intent) {
-        sketch.onNewIntent(intent)
+        val pApplet = sketch as PApplet
+        pApplet.onNewIntent(intent)
     }
 }
